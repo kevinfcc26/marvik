@@ -1,3 +1,4 @@
+import logging
 from typing import Annotated
 
 from fastapi import Depends
@@ -5,6 +6,8 @@ from fastapi import Depends
 from app.models import User
 from app.repositories.user_repository import UserRepository
 from app.utils.security import verify_password
+
+logger = logging.getLogger(__name__)
 
 
 class AuthService:
@@ -17,4 +20,5 @@ class AuthService:
             return None
         if not verify_password(password, db_user.hashed_password):
             return None
+        logger.info(f"user {db_user.email} authenticated")
         return db_user
