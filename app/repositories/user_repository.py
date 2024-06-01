@@ -29,7 +29,7 @@ class UserRepository(BaseRepository):
         self.session.add(entity)
         self.session.commit()
         self.session.refresh(entity)
-        logger.info(f"Create User :{entity.obj.dict()}")
+        logger.info(f"Create User :{entity.model_dump()}")
         return entity
 
     def get_all(self, **kwargs):
