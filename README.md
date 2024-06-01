@@ -5,7 +5,7 @@
 * [Docker](https://www.docker.com/).
 * [Poetry](https://python-poetry.org/) for Python package and environment management.
 
-## Local Development
+## Local Deployment
 
 * create new .env with the below structure
 
