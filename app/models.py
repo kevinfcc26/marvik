@@ -6,7 +6,7 @@ from app.enums.user_level import UserLevel
 class UserBase(SQLModel):
     email: str = Field(unique=True, index=True)
     name: str | None = None
-    surname: str
+    surname: str | None = None
     user_level: UserLevel = UserLevel.GUEST
     is_active: bool = True
     is_superuser: bool = False

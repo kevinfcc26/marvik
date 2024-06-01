@@ -25,7 +25,7 @@ def upgrade() -> None:
         "user",
         sa.Column("email", sqlmodel.sql.sqltypes.AutoString(), nullable=False),
         sa.Column("name", sqlmodel.sql.sqltypes.AutoString(), nullable=True),
-        sa.Column("surname", sqlmodel.sql.sqltypes.AutoString(), nullable=False),
+        sa.Column("surname", sqlmodel.sql.sqltypes.AutoString(), nullable=True),
         sa.Column("user_level", sa.Enum("ADMIN", "USER", "GUEST", name="userlevel"), nullable=False),
         sa.Column("is_active", sa.Boolean(), nullable=False),
         sa.Column("is_superuser", sa.Boolean(), nullable=False),
