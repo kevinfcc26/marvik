@@ -41,3 +41,9 @@ docker compose up -d
 ```bash
 docker-compose run app sh -c "./prestart.sh"
 ```
+
+## doc
+
+you can see the documentation on /redoc
+
+![API docs](img/redoc.png)
