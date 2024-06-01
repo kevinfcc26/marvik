@@ -17,7 +17,6 @@ def init_db(session: Session) -> None:
             password=settings.FIRST_SUPERUSER_PASSWORD,
             is_superuser=True,
             user_level=UserLevel.ADMIN,
-            surname=settings.FIRST_SUPERUSER_SURNAME,
         )
         user = User.model_validate(user_create, update={"hashed_password": get_password_hash(user_create.password)})
         session.add(user)
